@@ -1,0 +1,40 @@
+.block{
+    background-color: rgb(182, 182, 182);
+}
+
+.block-empty{
+    border-style: solid;
+    border-color: rgb(153, 153, 228); 
+    border-width: 2px;
+}
+/* header classes */
+.body{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+}
+
+.header-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+/* card classes */
+#cards-group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.card{
+    max-width: 300px;
+}
+
