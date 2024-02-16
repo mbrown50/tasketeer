@@ -15,7 +15,7 @@ TaskStatus.init(
       autoIncrement: true,
       
     },
-    name: {
+    status: {
       type: DataTypes.STRING,
       allowNull: false
     }
