@@ -2,16 +2,13 @@ const { TaskStatus } = require('../models');
 
 const TaskStatusData = [
   {
-    name: 'Complete',
-  
+    status: 'Complete',
   },
   {
-    name: 'Upcoming',
-  
+    status: 'Upcoming',
   },
   {
-    name: 'Cancelled',
-  
+    status: 'Cancelled',
   },
 ];
 

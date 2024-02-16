@@ -1,7 +1,7 @@
 // import models
-const TaskStatus = require('./TaskStatus');
-const Task = require('./Task');
 const User = require('./User');
+const Task = require('./Task');
+const TaskStatus = require('./TaskStatus');
 
 // One-to-Many
 
@@ -34,7 +34,7 @@ TaskStatus.hasMany(Task, {
 
 
 module.exports = {
+  User,
   Task,
   TaskStatus,
-  User
 };
