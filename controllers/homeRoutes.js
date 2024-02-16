@@ -5,4 +5,8 @@ router.get('/', async (req, res) => {
     res.render('login');
 });
 
+router.get('/task', async (req, res) => {
+    res.render('card');
+})
+
 module.exports = router;
