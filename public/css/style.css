@@ -1,26 +1,37 @@
-.block{
+.block {
     background-color: rgb(182, 182, 182);
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
 }
 
-.block-empty{
-    border-style: solid;
-    border-color: rgb(153, 153, 228); 
-    border-width: 2px;
+.block:hover {
+    background-color: rgb(152, 152, 152); /* Change the color on hover */
 }
+
+.block:active {
+    background-color: rgb(112, 112, 112); /* Change the color on click */
+}
+
+.block-empty {
+    border-style: solid;
+    border-color: rgb(153, 153, 228);
+    border-width: 2px;
+    transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
 /* header classes */
-.body{
+.body {
     display: flex;
     flex-direction: column;
     margin: 50px auto;
 }
 
-.header-top{
+.header-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.header-bottom{
+.header-bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,13 +39,26 @@
 }
 
 /* card classes */
-#cards-group{
+#cards-group {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
 
-.card{
+.card {
     max-width: 300px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition effect */
 }
+
+.card:hover {
+    transform: scale(1.1) translate(15%, 20%); /* Increase size and center on hover */
+    z-index: 1; /* Ensure the hovered card appears on top of others */
+    background-color: rgb(206, 98, 10); /* Change the background color on hover */
+}
+
+.card:not(:hover) {
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect when not hovered */
+}
+
+
 
