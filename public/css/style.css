@@ -1,28 +1,36 @@
-.block {
-    background-color: rgb(182, 182, 182);
-    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+body {
+    background: linear-gradient(45deg, #ec9a3c, #24c15e);
+    margin: 0;
+    font-family: 'Arial', sans-serif;
 }
 
-.block:hover {
-    background-color: rgb(152, 152, 152); /* Change the color on hover */
+.button {
+    background-color: rgb(138, 255, 103);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.block:active {
-    background-color: rgb(112, 112, 112); /* Change the color on click */
+.button:hover {
+    background-color: rgb(108, 249, 162);
+    color: #fff;
 }
 
-.block-empty {
-    border-style: solid;
-    border-color: rgb(153, 153, 228);
-    border-width: 2px;
-    transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
-}
-
-/* header classes */
 .body {
     display: flex;
     flex-direction: column;
     margin: 50px auto;
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .header-top {
@@ -35,10 +43,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
-/* card classes */
 #cards-group {
     display: flex;
     flex-direction: row;
@@ -48,17 +55,42 @@
 .card {
     max-width: 300px;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition effect */
+    margin-right: 20px;
 }
 
 .card:hover {
-    transform: scale(1.1) translate(15%, 20%); /* Increase size and center on hover */
-    z-index: 1; /* Ensure the hovered card appears on top of others */
-    background-color: rgb(206, 98, 10); /* Change the background color on hover */
+    transform: scale(1.1) translate(15%, 20%);
+    z-index: 1;
+    background-color: rgb(116, 246, 2);
 }
 
 .card:not(:hover) {
     transition: transform 0.3s ease-in-out; /* Smooth transition effect when not hovered */
 }
+
+.block {
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+    transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.block:hover {
+    background-color: rgb(116, 246, 2);
+}
+
+.block:active {
+    background-color: rgb(47, 136, 81);
+}
+
+.block-empty {
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+    transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+
 
 
 
