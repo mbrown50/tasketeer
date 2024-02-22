@@ -48,12 +48,13 @@ body {
 
 #cards-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
 }
 
 .card {
-    max-width: 300px;
+    margin-bottom: 20px;
+    margin-left: 20px;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition effect */
     margin-right: 20px;
 }
@@ -68,6 +69,7 @@ body {
     transition: transform 0.3s ease-in-out; /* Smooth transition effect when not hovered */
 }
 
+<<<<<<< HEAD
 .block {
     border-style: solid;
     border-color: rgb(0, 0, 0);
@@ -88,4 +90,27 @@ body {
     border-color: rgb(0, 0, 0);
     border-width: 2px;
     transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
+=======
+/* Modal classes */
+
+.input-button {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.input-modal {
+    display: none;
+    background-color: gray;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    height: auto;
+}
+
+.input-modal-content{
+    padding: 5px;
+>>>>>>> 06eff34fa793de884daacc6223f974ecd099bfd2
 }
