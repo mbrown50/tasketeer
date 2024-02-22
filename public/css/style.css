@@ -1,12 +1,11 @@
 body {
-    background: linear-gradient(45deg, #ec9a3c, #24c15e);
+    background: linear-gradient(100deg, #84FAB0, #a86d01b7);
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
 
 .button {
-    background-color: rgb(138, 255, 103);
-    color: #fff;
+    background-color: rgb(24, 90, 255);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -16,7 +15,7 @@ body {
 }
 
 .button:hover {
-    background-color: rgb(108, 249, 162);
+    background-color: rgb(20, 154, 231);
     color: #fff;
 }
 
@@ -43,7 +42,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 #cards-group {
@@ -53,36 +52,27 @@ body {
 }
 
 .card {
+    background-color: rgb(178, 144, 30);
     margin-bottom: 20px;
     margin-left: 20px;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition effect */
-    margin-right: 20px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth transition effect */
+    border: 2px solid black;
 }
 
 .card:hover {
     transform: scale(1.1) translate(15%, 20%);
     z-index: 1;
-    background-color: rgb(116, 246, 2);
+    background-color: rgb(20, 154, 231); /* Change the background color on hover */
+    border-color: black; /* Black border on hover */
 }
 
-.card:not(:hover) {
-    transition: transform 0.3s ease-in-out; /* Smooth transition effect when not hovered */
-}
-
-<<<<<<< HEAD
 .block {
-    border-style: solid;
-    border-color: rgb(0, 0, 0);
-    border-width: 2px;
-    transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
+    background-color: rgb(178, 144, 30);
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
 }
 
 .block:hover {
-    background-color: rgb(116, 246, 2);
-}
-
-.block:active {
-    background-color: rgb(47, 136, 81);
+    background-color: rgb(20, 154, 231); /* Change the color on hover */
 }
 
 .block-empty {
@@ -90,27 +80,5 @@ body {
     border-color: rgb(0, 0, 0);
     border-width: 2px;
     transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
-=======
-/* Modal classes */
-
-.input-button {
-    margin-left: 20px;
-    margin-bottom: 25px;
 }
 
-.input-modal {
-    display: none;
-    background-color: gray;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    height: auto;
-}
-
-.input-modal-content{
-    padding: 5px;
->>>>>>> 06eff34fa793de884daacc6223f974ecd099bfd2
-}
