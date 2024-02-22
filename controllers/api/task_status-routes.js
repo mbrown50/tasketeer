@@ -8,9 +8,7 @@ const { User, Task, TaskStatus } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const taskStatusData = await TaskStatus.findAll(
-      {
-        include: [{ model: TaskStatus }]
-      }
+      //{include: [{ model: TaskStatus }]}
     );
     res.status(200).json(taskStatusData);
   } catch (err) {
@@ -22,7 +20,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const taskStatusData = await TaskStatus.findByPk(req.params.id, {
-      include: [{ model: TaskStatus }]
+      //include: [{ model: TaskStatus }]
     });
     if (!taskStatusData) {
       res.status(404).json({ message: 'No task status with this id!' });
