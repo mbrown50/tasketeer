@@ -30,11 +30,12 @@
 /* card classes */
 #cards-group{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
 }
 
 .card{
-    max-width: 300px;
+    margin-bottom: 20px;
+    margin: 20px;
 }
 

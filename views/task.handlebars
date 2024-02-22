@@ -1,0 +1,57 @@
+    <header>
+        <div class="body container">
+            <div class="header-top">  
+                <p class="username">User</p>
+                <p>Taskateer</p>
+                <p>Logout</p>
+            </div>
+            <div class="header-bottom">
+                <button class="btn">&lt;</button> <p id="pagenumber" class="page">1/1</p> <button class="btn">&gt;</button>
+            </div>
+        </div>
+        
+    </header>
+
+    <div id="cards-group">
+                {{#each cardSet as |card|}}
+                    {{#if card.filled}}
+                    <div class="card card-body block container">
+                        <h5 class="card-title">{{card.data.task}}</h5>
+                        <p class="card-text">Date: {{card.data.date}}</p>
+                        <p class="card-text">Time: {{card.data.time}}</p>
+                        <p class="card-text">Location: {{card.data.location}}</p> 
+                        <p class="card-text">Notes: {{card.data.notes}}</p>               
+                    </div>
+                    {{else}}
+                    <div class="card card-body container block-empty">
+                        <h2>brokeroni</h2>
+                        
+                    </div>
+                    {{/if}}
+                {{/each}}
+                
+            </div>
+            <button id="input-button">Add Task</button>
+                <div id="input-modal" class="input-modal" >
+                    <div class="input-modal-content">
+                        <span class="close">&times;</span>
+                        <form>
+                            <label for="input-title">Input title:</label>
+                            <input type="text" id="input-title"><br>
+                            <label for="input-date">Input date:</label>
+                            <input type="text" id="input-date"><br>
+                            <label for="input-time">Input time:</label>
+                            <input type="text" id="input-time"><br>
+                            <label for="input-location">Input location:</label>
+                            <input type="text" id="input-location"><br>
+                            <label for="input-notes">Input notes:</label>
+                            <input type="text" id="input-notes"><br>
+
+                        </form>
+                    </div>
+                </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="../public/index.js"></script>
