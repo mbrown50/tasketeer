@@ -18,11 +18,8 @@ Task.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    date: {
+    datetime: {
       type: DataTypes.DATE,
-    },
-    time: {
-      type: DataTypes.TIME,
     },
     location: {
       type: DataTypes.STRING,
