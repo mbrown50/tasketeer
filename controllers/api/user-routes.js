@@ -7,11 +7,7 @@ const { User, Task, TaskStatus } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll(
-      // include used when query associated model
-      // not needed to query 1 table
-   //   {
-     //   include: [{ model: User }]
-     // }
+   //   {  include: [{ model: User }]}
     );
     res.status(200).json(userData);
   } catch (err) {
@@ -23,7 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
-      include: [{ model: Product }]
+     // include: [{ model: Product }]
     });
     if (!userData) {
       res.status(404).json({ message: 'No user with this id!' });
