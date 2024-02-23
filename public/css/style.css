@@ -66,14 +66,16 @@ body {
 .card:hover {
     transform: scale(1.1) translate(15%, 20%);
     z-index: 1;
-    background-color: rgb(20, 202, 253);
+    background-color: rgb(20, 154, 231); /* Change the background color on hover */
+    border-color: black; /* Black border on hover */
+}
+/* Modal classes */
+
+.input-button {
+    margin-left: 20px;
+    margin-bottom: 25px;
 }
 
-.card:not(:hover) {
-    transition: transform 0.3s ease-in-out; /* Smooth transition effect when not hovered */
-}
-
-/* Block styles */
 .block {
     border-style: solid;
     border-color: rgb(0, 0, 0);
@@ -82,17 +84,28 @@ body {
 }
 
 .block:hover {
-    background-color: rgb(20, 202, 253);
+    background-color: rgb(20, 154, 231); /* Change the color on hover */
 }
 
-.block:active {
-    background-color: rgb(20, 202, 253);
+.input-modal {
+    display: none;
+    background-color: gray;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    height: auto;
 }
 
-/* Block empty styles */
 .block-empty {
     border-style: solid;
     border-color: rgb(0, 0, 0);
     border-width: 2px;
     transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.input-modal-content{
+    padding: 5px;
 }
