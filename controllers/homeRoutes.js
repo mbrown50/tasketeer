@@ -6,13 +6,14 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/task', async (req, res) => {
+    let userID = 1;
     try {
         const db = await Task.findAll({
            where:{
-            user_id: userID,
+            user_id: userID
            } 
         })
-        cardSet = getCards(db);
+        cardSet = db;
 
         console.log(cardSet)
 
