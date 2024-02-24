@@ -14,20 +14,12 @@
 
     <div id="cards-group">
                 {{#each cardSet as |card|}}
-                    {{#if card.filled}}
                     <div class="card card-body block container">
-                        <h5 class="card-title">{{card.data.task}}</h5>
-                        <p class="card-text">Date: {{card.data.date}}</p>
-                        <p class="card-text">Time: {{card.data.time}}</p>
-                        <p class="card-text">Location: {{card.data.location}}</p> 
-                        <p class="card-text">Notes: {{card.data.notes}}</p>               
+                        <h5 class="card-title">{{card.task}}</h5>
+                        <p class="card-text">Datetime: {{card.datetime}}</p>
+                        <p class="card-text">Location: {{card.location}}</p> 
+                        <p class="card-text">Notes: {{card.notes}}</p>               
                     </div>
-                    {{else}}
-                    <div class="card card-body container block-empty">
-                        <h2>brokeroni</h2>
-                        
-                    </div>
-                    {{/if}}
                 {{/each}}
                 
             </div>

@@ -93,3 +93,25 @@ body {
     transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
 }
 
+/* modal classes */
+
+.input-modal {
+    display: none;
+    background-color: gray;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    height: auto;
+}
+
+.input-modal-content{
+    padding: 5px;
+}
+
+.input-button {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}

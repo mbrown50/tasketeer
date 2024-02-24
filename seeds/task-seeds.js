@@ -3,11 +3,11 @@ const { Task } = require('../models');
 const TaskData = [
     {
         task: "hello",
-        datetime: new Date('December 17, 1995 03:24:00'),
+        datetime: new Date("December 17, 1995 03:24:00"),
         location: "MN",
         notes: 'Hello',
         status_id: 1,
-        user_id: 1,
+        user_id: 1, 
     },
     {
         task: "hello",
@@ -32,6 +32,14 @@ const TaskData = [
         notes: 'note',
         status_id: 2,
         user_id: 4,
+    },
+    {
+        task: "Run",
+        datetime: new Date('March 30, 2023 07:42:00'),
+        location: "Wheel",
+        notes: 'Run on my hamster wheel',
+        status_id: 2,
+        user_id: 5,
     },
 ];
 
