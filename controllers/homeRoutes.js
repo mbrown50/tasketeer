@@ -13,7 +13,7 @@ router.get('/task', async (req, res) => {
             user_id: userID
            } 
         })
-        cardSet = db;
+        cardSet = db.map((task) => task.get({ plain: true }));
 
         console.log(cardSet)
 
