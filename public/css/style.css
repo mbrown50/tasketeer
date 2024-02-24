@@ -1,28 +1,35 @@
-.block {
-    background-color: rgb(182, 182, 182);
-    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+body {
+    background: linear-gradient(100deg, #84FAB0, #a86d01b7);
+    margin: 0;
+    font-family: 'Arial', sans-serif;
 }
 
-.block:hover {
-    background-color: rgb(152, 152, 152); /* Change the color on hover */
+.button {
+    background-color: rgb(24, 90, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.block:active {
-    background-color: rgb(112, 112, 112); /* Change the color on click */
+.button:hover {
+    background-color: rgb(20, 154, 231);
+    color: #fff;
 }
 
-.block-empty {
-    border-style: solid;
-    border-color: rgb(153, 153, 228);
-    border-width: 2px;
-    transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
-}
-
-/* header classes */
 .body {
     display: flex;
     flex-direction: column;
     margin: 50px auto;
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .header-top {
@@ -38,7 +45,6 @@
     margin-top: 60px;
 }
 
-/* card classes */
 #cards-group {
     display: flex;
     flex-direction: column;
@@ -46,40 +52,33 @@
 }
 
 .card {
+    background-color: rgb(178, 144, 30);
     margin-bottom: 20px;
     margin-left: 20px;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition effect */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth transition effect */
+    border: 2px solid black;
 }
 
 .card:hover {
-    transform: scale(1.1) translate(15%, 20%); /* Increase size and center on hover */
-    z-index: 1; /* Ensure the hovered card appears on top of others */
-    background-color: rgb(206, 98, 10); /* Change the background color on hover */
-}
-
-.card:not(:hover) {
-    transition: transform 0.3s ease-in-out; /* Smooth transition effect when not hovered */
-}
-
-/* Modal classes */
-
-.input-button {
-    margin-left: 20px;
-    margin-bottom: 25px;
-}
-
-.input-modal {
-    display: none;
-    background-color: gray;
-    position: fixed;
+    transform: scale(1.1) translate(15%, 20%);
     z-index: 1;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    height: auto;
+    background-color: rgb(20, 154, 231); /* Change the background color on hover */
+    border-color: black; /* Black border on hover */
 }
 
-.input-modal-content{
-    padding: 5px;
+.block {
+    background-color: rgb(178, 144, 30);
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
 }
+
+.block:hover {
+    background-color: rgb(20, 154, 231); /* Change the color on hover */
+}
+
+.block-empty {
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+    transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
