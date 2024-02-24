@@ -42,12 +42,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 #cards-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
 }
 
@@ -69,6 +69,17 @@ body {
 .block {
     background-color: rgb(178, 144, 30);
     transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.block:hover {
+    background-color: rgb(20, 154, 231); /* Change the color on hover */
+}
+
+.block {
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+    transition: border-color 0.3s ease-in-out; /* Smooth transition effect */
 }
 
 .block:hover {
