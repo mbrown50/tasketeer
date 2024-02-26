@@ -101,7 +101,7 @@ inputSubmit.onclick = async function (event) {
 
     inputModal.style.display = "none";
 
-    location.reload();
+    document.location.replace('/task');
 }
 
 function setCookie(name, value, days) {
