@@ -101,7 +101,6 @@ inputSubmit.onclick = async function (event) {
 
     inputModal.style.display = "none";
 
-     document.location.replace('/task');
      document.location.reload();
 }
 
