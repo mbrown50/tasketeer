@@ -7,7 +7,7 @@ const { User, Task, TaskStatus } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll(
-   //   {  include: [{ model: User }]}
+      //   {  include: [{ model: User }]}
     );
     res.status(200).json(userData);
   } catch (err) {
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
-     // include: [{ model: Product }]
+      // include: [{ model: Product }]
     });
     if (!userData) {
       res.status(404).json({ message: 'No user with this id!' });
@@ -35,11 +35,17 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+
+    /* req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json(userData);
+
+    }); */
+   } catch (err) {
+      res.status(400).json(err);
+    }
+  });
 
 // UPDATE a user
 router.put('/:id', async (req, res) => {
@@ -77,5 +83,59 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Login
+router.post('/login', async (req, res) => {
+
+  try {
+
+    //   res.redirect('./task'); // error here
+     //  windows.location.href = "/task";
+
+    const userData = await User.findOne({
+      where: {
+        login: req.body.login,
+      },
+    });
+
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    }
+
+    const validPassword =  true; //await userData.checkPassword(req.body.pw);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    } 
+
+  //  req.session.save(() => {
+   //   req.session.loggedIn = true;
+
+      res
+        .status(200)
+        .json({ user: userData, message: 'You are now logged in!' });
+      
+   // });  
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Logout
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 module.exports = router;

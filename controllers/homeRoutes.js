@@ -11,18 +11,38 @@ router.get('/task', async (req, res) => {
         const db = await Task.findAll({
            where:{
             user_id: userID
-           } 
-        })
+           },  
+           order: [
+           ['datetime', 'ASC'],
+           ['id', 'ASC'],
+           ],
+        });
+
         cardSet = db.map((task) => task.get({ plain: true }));
 
-        console.log(cardSet)
+        // console.log(cardset);
 
         res.render('task', {cardSet});
+
+        // testing multiple cards
+
+       // cardSet = db.map((task) => task.get({ plain: true }));
+       // console.log(cardSet)
+       // res.render('task', {cardSet});
     
         }catch(err){
             console.log(err);
             res.status(500).json(err);
         }
 })
+
+// Login route
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/task');
+      return;
+    }
+    res.render('login');
+  });
 
 module.exports = router;
