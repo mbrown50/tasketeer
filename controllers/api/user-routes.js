@@ -88,15 +88,13 @@ router.post('/login', async (req, res) => {
 
   try {
 
-    //   res.redirect('./task'); // error here
-     //  windows.location.href = "/task";
-
+    console.log("login");
     const userData = await User.findOne({
       where: {
         login: req.body.login,
       },
     });
-
+console.log(userData);
     if (!userData) {
       res
         .status(400)
@@ -127,7 +125,7 @@ router.post('/login', async (req, res) => {
       
     });  
 
-    return; //userData.id;
+    return userData.id;
 
   } catch (err) {
     console.log(err);
