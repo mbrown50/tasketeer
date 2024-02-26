@@ -1,4 +1,5 @@
 let loginSubmit = document.getElementById("login-submit");
+let loginAdd = document.getElementById("login-add");
 
 //eraseCookie("connect.sid");
 eraseCookie("user_id");
@@ -29,18 +30,19 @@ loginSubmit.onclick = async function (event) {
     };
 
     fetch(apiUrl, requestOptions)
+    /* .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+    }) */
         .then(response =>
             response.json().then(data => ({
                 data: data,
             })
             ).then(res => {
-                /*  if (!response.ok) {
-                     throw new Error('Network response was not ok');
-                 } */
-                // console.log(res.data),
                 setCookie("user_id", res.data, 1);
                 document.location.replace('/task');
-                return;
+                return response.json();;
             })
                 .catch(error => {
                     console.error
@@ -51,24 +53,40 @@ loginSubmit.onclick = async function (event) {
         )
 }
 
-/*
-    console.log("response start");
-    console.log("response :", response);
-    console.log("response end");
-    // set user ID cookie now
-   setCookie("user_id", 1, 1);
-    //console.log("cooke: ", response.json());
-   //response.json(); -- how to read back in user ID
+loginAdd.onclick = async function (event) {
+    event.preventDefault();
 
-     {
-         "user": {
-             "id": 6,
-             "login": "mbrown50",
-             "pw": "password"
-         },
-         "message": "You are now logged in!"
-     } 
-}) */
+    const apiUrl = "../api/users";
+
+    let inputUser = document.getElementById("newLogin").value;
+    let inputPassword = document.getElementById("newPassword").value;
+
+    const data = {
+        "login": inputUser,
+        "pw": inputPassword
+    };
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    };
+
+    fetch(apiUrl, requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error
+
+                ('Error:', error);
+        })
+}
 
 function setCookie(name, value, days) {
     var expires = "";
