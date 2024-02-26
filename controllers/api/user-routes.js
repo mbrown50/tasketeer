@@ -104,27 +104,36 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword =  true; //await userData.checkPassword(req.body.pw);
+    //const validPassword = //await userData.checkPassword(req.body.pw);
 
-    if (!validPassword) {
+    //if (!validPassword) {
+    if(req.body.pw != userData.pw) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     } 
 
-  //  req.session.save(() => {
-   //   req.session.loggedIn = true;
+   req.session.save(() => {
+    console.log("session save start");
+     req.session.loggedIn = true;
 
       res
         .status(200)
-        .json({ user: userData, message: 'You are now logged in!' });
+        //.json({ user: userData, message: 'You are now logged in!' });
+        .json(userData.id);
+
+        console.log("logged in");
       
-   // });  
+    });  
+
+    return; //userData.id;
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+
 });
 
 // Logout
@@ -132,10 +141,15 @@ router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
+      console.log("logged out")
+
     });
   } else {
     res.status(404).end();
   }
+
 });
+
+
 
 module.exports = router;
