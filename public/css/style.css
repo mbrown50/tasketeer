@@ -1,7 +1,11 @@
 body {
-    background: linear-gradient(100deg, #84FAB0, #a86d01b7);
+    background: linear-gradient(100deg, #84FAB0, #f0a417b8);
     margin: 0;
     font-family: 'Arial', sans-serif;
+}
+
+.about {
+    margin-left: 15px;
 }
 
 .button {
@@ -47,12 +51,12 @@ body {
 
 #cards-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
 }
 
 .card {
-    background-color: rgb(178, 144, 30);
+    background-color: rgb(236, 196, 63);
     margin-bottom: 20px;
     margin-left: 20px;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth transition effect */
@@ -67,7 +71,7 @@ body {
 }
 
 .block {
-    background-color: rgb(178, 144, 30);
+    background-color: rgb(236, 196, 63);
     transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
 }
 
