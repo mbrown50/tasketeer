@@ -36,7 +36,7 @@ logoutButton.onclick = function (event) {
             eraseCookie("connect.sid");
             eraseCookie("user_id");
             document.location.replace('/');
-            return //response.json();
+            return response.json();
         })
         .catch(error => {
             console.error

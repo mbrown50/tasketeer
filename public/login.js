@@ -35,21 +35,25 @@ loginSubmit.onclick = async function (event) {
             throw new Error('Network response was not ok');
         }
     }) */
-        .then(response =>
+        .then(response => {
+            console.log(response.ok);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             response.json().then(data => ({
                 data: data,
             })
             ).then(res => {
                 setCookie("user_id", res.data, 1);
                 document.location.replace('/task');
-                return response.json();;
+                return; 
             })
                 .catch(error => {
                     console.error
 
                         ('Error:', error);
                 })
-
+            }
         )
 }
 
