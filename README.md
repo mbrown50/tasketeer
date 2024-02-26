@@ -1,4 +1,4 @@
-  # Tasketeer
+  # Tasketeer Scheduler
   A schedule task manager.
  
   ## Table of Contents
@@ -12,7 +12,7 @@
   SO THAT I can easily see my appointments.
 
   ## Site
-  TBD: link here
+ [Site - hosted on Heroku](https://peaceful-springs-27135-e24eda2585d0.herokuapp.com/)
 
   ## License
   
