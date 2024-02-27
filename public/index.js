@@ -4,6 +4,27 @@ let userButton = document.getElementById("user-button");
 let logoutButton = document.getElementById("logout-button");
 let inputSubmit = document.getElementById("input-submit");
 let inputModal = document.getElementById("input-modal");
+let helloName = document.getElementById("helloName");
+
+
+// using date-fns
+// issues with date-fns, can't import or require...
+
+//import { isThisWeek, isToday } from "./node_modules/date-fns/esm/index.js";
+//console.log("Today?", isToday(new Date()));        // true
+//console.log("This Week?", isThisWeek(new Date())); // true
+
+//import { parse } from 'date-fns';
+
+//import { format } from "date-fns";
+//import { format } from 'date-fns';
+//window.dateFns = require('date-fns');
+
+//const date = new Date();
+//const formattedDate = dateFns.format(date, 'dd/MM/yyyy');
+
+helloName.innerHTML = "Datetime: " + Date();
+
 
 inputButton.onclick = function () {
     //console.log("open");
@@ -18,14 +39,12 @@ logoutButton.onclick = function (event) {
     event.preventDefault();
 
     const apiUrl = "../api/users/logout";
-    // console.log("API", apiUrl);
 
     const requestOptions = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        //body: JSON.stringify(data),
     };
 
     fetch(apiUrl, requestOptions)
@@ -101,7 +120,11 @@ inputSubmit.onclick = async function (event) {
 
     inputModal.style.display = "none";
 
+<<<<<<< Updated upstream
      document.location.reload();
+=======
+    document.location.reload(); 
+>>>>>>> Stashed changes
 }
 
 function setCookie(name, value, days) {
@@ -132,5 +155,3 @@ function getCookie(name) {
 function eraseCookie(name) {
     document.cookie = name + '=; Max-Age=-99999999;';
 }
-
-
