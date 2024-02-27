@@ -120,12 +120,7 @@ inputSubmit.onclick = async function (event) {
 
     inputModal.style.display = "none";
 
-<<<<<<< Updated upstream
      document.location.reload();
-=======
-    document.location.reload(); 
->>>>>>> Stashed changes
-}
 
 function setCookie(name, value, days) {
     var expires = "";
