@@ -102,9 +102,6 @@ console.log(userData);
       return;
     }
 
-    //const validPassword = //await userData.checkPassword(req.body.pw);
-
-    //if (!validPassword) {
     if(req.body.pw != userData.pw) {
       res
         .status(400)
@@ -118,7 +115,6 @@ console.log(userData);
 
       res
         .status(200)
-        //.json({ user: userData, message: 'You are now logged in!' });
         .json(userData.id);
 
         console.log("logged in");
