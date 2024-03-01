@@ -4,7 +4,6 @@ let userButton = document.getElementById("user-button");
 let logoutButton = document.getElementById("logout-button");
 let inputSubmit = document.getElementById("input-submit");
 let inputModal = document.getElementById("input-modal");
-let helloName = document.getElementById("helloName");
 
 inputButton.onclick = function () {
     inputModal.style.display = "block";
