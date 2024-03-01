@@ -6,7 +6,6 @@ const app = require('express')();
 
 app.use('/', (req, res) => {
     var cookie = getcookie(req);
-    // console.log(cookie);
 });
 
 function getcookie(req) {
@@ -40,6 +39,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/task', async (req, res) => {
+
     var userValue = getCookieValue(req, "user_id");
 
     let userID = userValue;
@@ -66,8 +66,6 @@ router.get('/task', async (req, res) => {
             attributes: ['login'],
             raw: true,
         });
-
-        //console.log(userLogin[0]);
 
     } catch (err) {
         console.log(err);

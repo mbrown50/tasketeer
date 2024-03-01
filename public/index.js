@@ -6,33 +6,11 @@ let inputSubmit = document.getElementById("input-submit");
 let inputModal = document.getElementById("input-modal");
 let helloName = document.getElementById("helloName");
 
-
-// using date-fns
-// issues with date-fns, can't import or require...
-
-//import { isThisWeek, isToday } from "./node_modules/date-fns/esm/index.js";
-//console.log("Today?", isToday(new Date()));        // true
-//console.log("This Week?", isThisWeek(new Date())); // true
-
-//import { parse } from 'date-fns';
-
-//import { format } from "date-fns";
-//import { format } from 'date-fns';
-//window.dateFns = require('date-fns');
-
-//const date = new Date();
-//const formattedDate = dateFns.format(date, 'dd/MM/yyyy');
-
-helloName.innerHTML = "Datetime: " + Date();
-
-
 inputButton.onclick = function () {
-    //console.log("open");
     inputModal.style.display = "block";
 }
 
 inputClose.onclick = function () {
-    //console.log("close");
 }
 
 logoutButton.onclick = function (event) {
@@ -65,37 +43,28 @@ logoutButton.onclick = function (event) {
 }
 
 inputClose.onclick = function () {
-    //console.log("close");
     inputModal.style.display = "none";
 }
 
 inputSubmit.onclick = async function (event) {
     event.preventDefault();
 
-    //console.log("submit");
     const apiUrl = "../api/tasks";
 
-    //console.log(apiUrl);
-
     let inputTitle = document.getElementById("input-title").value;
-    let inputDate = document.getElementById("input-date").value;
-    let inputTime = document.getElementById("input-time").value;
     let inputLocation = document.getElementById("input-location").value;
     let inputNotes = document.getElementById("input-notes").value;
 
     var cookieValue = getCookie("user_id");
-    //console.log("cookie! " + cookieValue);
 
     const data = {
         "task": inputTitle,
-        "datetime": "2024-02-17T09:24:00.000Z",
+        "datetime": "2024-02-29T09:00:00.000Z", // default datetime
         "location": inputLocation,
         "notes": inputNotes,
         "status_id": 1,
         "user_id": cookieValue,
     };
-
-    // console.log(data);
 
     const requestOptions = {
         method: 'POST',
@@ -120,12 +89,8 @@ inputSubmit.onclick = async function (event) {
 
     inputModal.style.display = "none";
 
-<<<<<<< Updated upstream
      document.location.reload();
-=======
-    document.location.reload(); 
->>>>>>> Stashed changes
-}
+    }
 
 function setCookie(name, value, days) {
     var expires = "";
