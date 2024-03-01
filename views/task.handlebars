@@ -51,8 +51,8 @@
                 {{#each cardSet as |card|}}
                     <div class="card card-body block container">
                         <h5 class="card-title">{{card.task}}</h5>
-                        <p class="card-text">Date: {{card.datetime}}</p>
-                        <p class="card-text">Time: {{card.datetime}}</p>
+                        <p class="card-text">Date: {{card.dateFormat}}</p>
+                        <p class="card-text">Time: {{card.timeFormat}}</p>
                         <p class="card-text">Location: {{card.location}}</p> 
                         <p class="card-text">Notes: {{card.notes}}</p>   
                     </div>

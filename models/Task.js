@@ -2,8 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Task extends Model {}
+class Task extends Model { }
 
+// had to use require
+// date-fns 
+const { format } = require("date-fns")
 
 Task.init(
   {
@@ -21,6 +24,24 @@ Task.init(
     datetime: {
       type: DataTypes.DATE,
     },
+    dateFormat: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return format(`${this.datetime}`, "MM/DD/YYYY"); 
+      },
+      set(value) {
+        throw new Error('Do not try to set the `fullName` value!');
+      }
+    },
+    timeFormat: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return format(`${this.datetime}`, "HH:mm"); 
+      },
+      set(value) {
+        throw new Error('Do not try to set the `fullName` value!');
+      }
+    }, 
     location: {
       type: DataTypes.STRING,
     },
